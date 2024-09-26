@@ -4,16 +4,13 @@
 #include <QHBoxLayout>
 #include <QSlider>
 #include <QLabel>
+#include <qnamespace.h>
 #include "ImageLabel.h"
-
+#include "TimeSlider.h"
 class AudioPlayer : public QGridLayout{
 public:
     AudioPlayer();
 private:
-    class TimeSlider : public QSlider{
-    public:
-        TimeSlider();
-    };
     class PlayerButton : public QPushButton{
     public:
         PlayerButton();

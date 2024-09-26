@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # Set the project name and version
-project(RAP VERSION 1.2.0 LANGUAGES CXX)
+project(RAP VERSION 1.3.0 LANGUAGES CXX)
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/Config.h.in" "${CMAKE_CURRENT_SOURCE_DIR}/headers/Config.h")
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)

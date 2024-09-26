@@ -1,6 +1,4 @@
 #include "headers/AudioPlayer.h"
-#include <qlabel.h>
-#include <qnamespace.h>
 
 AudioPlayer::AudioPlayer(){
     auto player_controls = CreatePlayerControls();
@@ -22,7 +20,8 @@ QVBoxLayout* AudioPlayer::CreatePlayerControls(){
     QPushButton *forward_button = new QPushButton("Forward");
     QPushButton *loop_button = new QPushButton("Loop");
     QPushButton *mix_button = new QPushButton("Mix");
-    QSlider *time_slider = new QSlider(Qt::Horizontal);
+    //QSlider *time_slider = new QSlider(Qt::Horizontal);
+    TimeSlider *time_slider = new TimeSlider();
     QLabel *current_time_label = new QLabel("0:00"), *total_time_label = new QLabel("99:99");
 
     play_back_controls->addWidget(back_button);
