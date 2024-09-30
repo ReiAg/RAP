@@ -8,16 +8,37 @@ AudioPlayer::AudioPlayer(){
     setColumnMinimumWidth(0, 200);
     setColumnMinimumWidth(1, 200);
     setColumnMinimumWidth(2, 200);
+    initPlayer();
 
 }
+
+void AudioPlayer::play(){
+    player->play();
+}
+void AudioPlayer::stop(){
+    player->stop();
+}
+void AudioPlayer::setVolume(float value){
+    audioOutput->setVolume(value);
+}
+bool AudioPlayer::isPlaying(){
+    return player->isPlaying();
+}
+
+bool AudioPlayer::isSourceSet(){
+    return !player->source().isEmpty();
+};
+
+
+
 QVBoxLayout* AudioPlayer::CreatePlayerControls(){
     QVBoxLayout *player_controls = new QVBoxLayout();
     QHBoxLayout *play_back_controls = new QHBoxLayout();
     QHBoxLayout *time_controls = new QHBoxLayout();
 
-    QPushButton *back_button = new QPushButton("Back");
-    QPushButton *play_button = new QPushButton("Play");
-    QPushButton *forward_button = new QPushButton("Forward");
+    BackButton *back_button = new BackButton(this);
+    PlayButton *play_button = new PlayButton(this);
+    ForwardButton *forward_button = new ForwardButton(this); 
     QPushButton *loop_button = new QPushButton("Loop");
     QPushButton *mix_button = new QPushButton("Mix");
     //QSlider *time_slider = new QSlider(Qt::Horizontal);
